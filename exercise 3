@@ -1,0 +1,258 @@
+# ============================================================
+# PYTHON PRACTICAL PROGRAMS
+# Enter the program number to run only that program
+# ============================================================
+
+
+# 1. Student Marks Analysis
+def program1():
+    marks = [78, 85, 92, 67, 88, 90, 76]
+
+    print("Highest Mark:", max(marks))
+    print("Lowest Mark:", min(marks))
+    print("Average Mark:", sum(marks) / len(marks))
+
+
+# 2. Temperature Analysis
+def program2():
+    temperature = [30, 32, 31, 29, 35, 34, 33]
+
+    print("Maximum Temperature:", max(temperature))
+    print("Minimum Temperature:", min(temperature))
+    print("Average Temperature:", sum(temperature) / len(temperature))
+
+
+# 3. Weekly Sales Analysis
+def program3():
+    sales = [2500, 3000, 2800, 3500, 4000, 3800, 4200]
+
+    print("Total Sales:", sum(sales))
+    print("Average Sales:", sum(sales) / len(sales))
+
+
+# 4. Even and Odd Employee IDs
+def program4():
+    ids = [101, 102, 103, 104, 105, 106]
+
+    even = []
+    odd = []
+
+    for i in ids:
+        if i % 2 == 0:
+            even.append(i)
+        else:
+            odd.append(i)
+
+    print("Even IDs:", even)
+    print("Odd IDs:", odd)
+
+
+# 5. Count Positive and Negative Values
+def program5():
+    values = [20, -5, 15, -10, 30, -2]
+
+    positive = 0
+    negative = 0
+
+    for i in values:
+        if i > 0:
+            positive += 1
+        elif i < 0:
+            negative += 1
+
+    print("Positive Values:", positive)
+    print("Negative Values:", negative)
+
+
+# 6. Find Duplicate Customer IDs
+def program6():
+    customer_ids = [101, 102, 103, 102, 104, 105, 101]
+
+    duplicates = []
+
+    for i in customer_ids:
+        if customer_ids.count(i) > 1 and i not in duplicates:
+            duplicates.append(i)
+
+    print("Duplicate IDs:", duplicates)
+
+
+# 7. Product Price Analysis
+def program7():
+    prices = [250, 450, 120, 600, 350]
+
+    print("Highest Price:", max(prices))
+    print("Lowest Price:", min(prices))
+
+
+# 8. Employee Salary Increment
+def program8():
+    salary = [25000, 30000, 40000, 35000]
+
+    new_salary = []
+
+    for s in salary:
+        new_salary.append(s * 1.10)
+
+    print("Updated Salaries:", new_salary)
+
+
+# 9. Attendance Percentage
+def program9():
+    total_classes = 90
+    attended = 81
+
+    percentage = (attended / total_classes) * 100
+
+    print("Attendance Percentage:", percentage)
+
+
+# 10. Students Who Passed
+def program10():
+    marks = [45, 67, 89, 32, 78, 55, 49]
+
+    passed = []
+
+    for m in marks:
+        if m >= 50:
+            passed.append(m)
+
+    print("Passed Students Marks:", passed)
+
+
+# 11. Shopping Bill Calculation
+def program11():
+    prices = [120, 80, 150, 200]
+
+    total = sum(prices)
+
+    print("Total Bill:", total)
+
+
+# 12. Word Frequency Analysis
+def program12():
+    feedback = "good service good quality excellent service"
+
+    words = feedback.split()
+
+    for word in set(words):
+        print(word, ":", words.count(word))
+
+
+# 13. Age Group Classification
+def program13():
+    ages = [12, 25, 45, 67, 15]
+
+    for age in ages:
+        if age < 18:
+            print(age, "Child")
+        elif age < 60:
+            print(age, "Adult")
+        else:
+            print(age, "Senior Citizen")
+
+
+# 14. Electricity Bill Calculation
+def program14():
+    units = 250
+
+    if units <= 100:
+        bill = units * 2
+
+    elif units <= 200:
+        bill = 100 * 2 + (units - 100) * 3
+
+    else:
+        bill = 100 * 2 + 100 * 3 + (units - 200) * 5
+
+    print("Electricity Bill:", bill)
+
+
+# 15. Monthly Expense Analysis
+def program15():
+    expenses = [12000, 15000, 18000, 11000, 17000]
+
+    highest = max(expenses)
+
+    month = expenses.index(highest) + 1
+
+    print("Highest Expense:", highest)
+    print("Month:", month)
+
+
+# ============================================================
+# MENU
+# ============================================================
+
+print("\n===== PYTHON PROGRAMS =====")
+
+print("1. Student Marks Analysis")
+print("2. Temperature Analysis")
+print("3. Weekly Sales Analysis")
+print("4. Even and Odd Employee IDs")
+print("5. Positive and Negative Values")
+print("6. Duplicate Customer IDs")
+print("7. Product Price Analysis")
+print("8. Employee Salary Increment")
+print("9. Attendance Percentage")
+print("10. Students Who Passed")
+print("11. Shopping Bill Calculation")
+print("12. Word Frequency Analysis")
+print("13. Age Group Classification")
+print("14. Electricity Bill Calculation")
+print("15. Monthly Expense Analysis")
+
+choice = int(input("\nEnter program number (1-15): "))
+
+
+# ============================================================
+# IF-ELIF TO RUN SPECIFIC PROGRAM
+# ============================================================
+
+if choice == 1:
+    program1()
+
+elif choice == 2:
+    program2()
+
+elif choice == 3:
+    program3()
+
+elif choice == 4:
+    program4()
+
+elif choice == 5:
+    program5()
+
+elif choice == 6:
+    program6()
+
+elif choice == 7:
+    program7()
+
+elif choice == 8:
+    program8()
+
+elif choice == 9:
+    program9()
+
+elif choice == 10:
+    program10()
+
+elif choice == 11:
+    program11()
+
+elif choice == 12:
+    program12()
+
+elif choice == 13:
+    program13()
+
+elif choice == 14:
+    program14()
+
+elif choice == 15:
+    program15()
+
+else:
+    print("Invalid program number!")
