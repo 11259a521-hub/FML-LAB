@@ -1,0 +1,84 @@
+import pandas as pd
+from sklearn.datasets import load_iris
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+
+
+# ============================================================
+# LOAD IRIS DATASET
+# ============================================================
+
+iris = load_iris()
+
+# Create DataFrame
+df = pd.DataFrame(
+    iris.data,
+    columns=[
+        "SepalLengthCm",
+        "SepalWidthCm",
+        "PetalLengthCm",
+        "PetalWidthCm"
+    ]
+)
+
+# Add target column
+df["Species"] = iris.target_names[iris.target]
+
+
+# ============================================================
+# 1. DISPLAY FIRST 5 RECORDS
+# ============================================================
+
+print("First 5 Records:")
+print(df.head())
+
+
+# ============================================================
+# 2. DISPLAY DATASET INFORMATION
+# ============================================================
+
+print("\nDataset Information:")
+df.info()
+
+
+# ============================================================
+# 3. CHECK FOR MISSING VALUES
+# ============================================================
+
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+
+# ============================================================
+# 4. ENCODE SPECIES
+# ============================================================
+
+encoder = LabelEncoder()
+
+df["Species"] = encoder.fit_transform(df["Species"])
+
+print("\nEncoded Species:")
+print(df.head())
+
+
+# ============================================================
+# 5. FEATURE SCALING
+# ============================================================
+
+scaler = StandardScaler()
+
+features = [
+    "SepalLengthCm",
+    "SepalWidthCm",
+    "PetalLengthCm",
+    "PetalWidthCm"
+]
+
+df[features] = scaler.fit_transform(df[features])
+
+
+# ============================================================
+# 6. DISPLAY PREPROCESSED DATASET
+# ============================================================
+
+print("\nPreprocessed Dataset:")
+print(df.head())
